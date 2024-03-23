@@ -1,0 +1,66 @@
+---
+title: "Victims of auschwitz"
+author: 
+  - Ahnaf Alam
+thanks: "Code and data are available at: LINK."
+date: today
+date-format: long
+format: pdf
+number-sections: true
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(readxl)
+library(ggplot2)
+
+
+df <- file.choose()
+
+df <- read_csv(df)
+
+
+```
+
+
+
+
+```{r}
+df <- 
+  df |>
+  rename(
+    ethnicity = Ethnicity,
+    deportees = `Number of deportees`,
+    victims = `Number of victims`) 
+
+```
+
+
+
+```{r}
+df |>
+  ggplot(aes(x = ethnicity, y = victims)) +
+  geom_bar(stat = "identity", fill = "skyblue", color = "black")+ 
+  labs(title = "Number of Murder Victims by Ethnicity at Auschwitz",
+       x = "Ethnicity",
+       y = "Number of victims") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+
+
+
+
+
+\newpage
+
+
+# References
+
+
