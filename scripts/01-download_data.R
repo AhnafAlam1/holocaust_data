@@ -11,7 +11,7 @@
 #### Workspace setup ####
 
 library(tidyverse)
-# [...UPDATE THIS...]
+
 
 #### Download data ####
 df <- file.choose()

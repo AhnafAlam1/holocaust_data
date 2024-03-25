@@ -11,38 +11,44 @@ library(shiny)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
-  # Application title
-  titlePanel("Count of holocaust victims by ethicity at Autschwitz"),
   
-  # Sidebar with a slider input for number of bins
+  titlePanel("Holocaust Victims at Auschwitz"),
+  
   sidebarLayout(
     sidebarPanel(
-      sliderInput(
-        inputId = "number_of_bins",
-        label = "Number of bins:",
-        min = 1,
-        max = 50,
-        value = 30
-      )
+      selectInput("ethnicity", "Select Ethnicity:", choices = unique(df$ethnicity), multiple = TRUE),
+      actionButton("update", "Update")
     ),
-    
-    # Show a plot of the generated distribution
-    mainPanel(plotOutput("distPlot"))
+    mainPanel(
+      plotOutput("bar_plot"),
+      dataTableOutput("table")
+    )
   )
 )
 
-# Define server logic required to draw a histogram
+# Define server logic
 server <- function(input, output) {
-  output$distPlot <- renderPlot({
-    # Draw the histogram with the specified number of bins
-    df |>
-      ggplot(aes(x = ethnicity, y = victims)) +
-      geom_bar(stat = "identity", fill = "skyblue", color = "black")+ 
-      labs(title = "Number of Murder Victims by Ethnicity at Auschwitz",
-           x = "Ethnicity",
-           y = "Number of victims") +
-      theme_minimal() +
-      theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  
+  # Reactively update plot and table
+  observeEvent(input$update, {
+    filtered_data <- df %>%
+      filter(ethnicity %in% input$ethnicity)
+    
+    # Generate bar plot
+    output$bar_plot <- renderPlot({
+      ggplot(filtered_data, aes(x = ethnicity)) +
+        geom_bar(fill = "skyblue") +
+        labs(title = "Holocaust Victims by Ethnicity",
+             x = "Ethnicity",
+             y = "Number of Victims") +
+        theme_minimal() +
+        theme(axis.text.x = element_text(angle = 45, hjust = 1))
+    })
+    
+    # Generate table
+    output$table <- renderDataTable({
+      filtered_data
+    })
   })
 }
 

@@ -20,9 +20,7 @@ library(readxl)
 library(ggplot2)
 
 
-df <- file.choose()
-
-df <- read_csv(df)
+df <- read_csv(here::here("data/raw_data/df.csv"))
 
 
 ```
@@ -31,29 +29,44 @@ df <- read_csv(df)
 
 
 ```{r}
-df <- 
-  df |>
+
+df <- df |>
   rename(
-    ethnicity = Ethnicity,
-    deportees = `Number of deportees`,
-    victims = `Number of victims`) 
+    ethnicity = Birthplace,
+    last_name = `Last Name`
+  )
 
 ```
+
+
 
 
 
 ```{r}
-df |>
-  ggplot(aes(x = ethnicity, y = victims)) +
-  geom_bar(stat = "identity", fill = "skyblue", color = "black")+ 
-  labs(title = "Number of Murder Victims by Ethnicity at Auschwitz",
-       x = "Ethnicity",
-       y = "Number of victims") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
 ```
 
 
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+df_1 |>
+  ggplot(aes(x = ethnicity, y = total, fill = ethnicity)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Total Number of Last Names by Ethnicity",
+       x = "Ethnicity",
+       y = "Total Number of Last Names",
+       fill = "Ethnicity") +
+  theme_minimal() + 
+  scale_fill_brewer(palette = "Set1")
+
+```
+
+
+Discussion
 
 
 
