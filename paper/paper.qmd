@@ -2,7 +2,7 @@
 title: "Victims of auschwitz"
 author: 
   - Ahnaf Alam
-thanks: "Code and data are available at: LINK."
+thanks: "Code and data are available at https://github.com/AhnafAlam1/holocaust_data"
 date: today
 date-format: long
 format: pdf
@@ -29,6 +29,9 @@ df <- read_csv(here::here("data/raw_data/df.csv"))
 
 
 ```{r}
+#| warning: false
+#| message: false
+#| echo: false
 
 df <- df |>
   rename(
@@ -39,34 +42,35 @@ df <- df |>
 ```
 
 
+# Discussion
+
+## what we did
+
+In the article titled " We Still Can’t See American Slavery for What It Was" by @Bouie_2022, the author touches on some topic that is relevant to the work we have done this project. In this project, we use holocaust data, specifically Auschwitz to evaluate all those who perished during World war II. We created a app using `shiny` [@shiny] library, which lets us evaluate all those who died at Auschwitz using their ethnic background. The data we got was from @data. 
+
+## Data info
+
+The data contains preserved Death Books or Sterbebücher of Auschwitz concentration camp in Poland between July 29, 1941 to December 31, 1943. The data includes information of first name, and last name of the victims, along with their date of birth, date of death, birthplace, residence and religion. For the purposes of our app, we assume birthplace is valid indicator of a victims ethnicity as the data lacks information on ethnicity data. 
+
+## Discussion based on Bouie
+
+The author starts out by pointing out the 12.5 million people who were captured during slave trade, only 10.7 million people actually reached the so-called "new world". In contrast to what we did, the data we found consists of 65,280 people between July 29, 1941 and December 31, 1943 at just one location, Auschwitz. 
+
+The author then talks about SlaveVoyages database which is a repository, detailing information on individual ships, individual voyages and even individual people. This is a ground-breaking tool for researcher that it offers opportunity for nuanced research and answer question that were previously unknown. Similarly, database like United States Holocaust Memorial Museum lets us analyze and ask research question pertaining to World war II. Both instances highlight the importance of data availability and possibilities that are out there when we have data.
+
+## Identifying individuals
+
+Bouie proposes the question: How exactly do we relate to data that allows someone — anyone — to identify a specific enslaved person? In this project, we ask a question on a similar breadth. However, unlike Bouie, we start by asking ethnicity or birth place are we interested in. From there, the `shiny` app allows us look at individuals with first and last name based on the ethnicity. I believe this is an important thing to be able to do as people who have lost their family during holocaust, can now trace back to see if their ancestors were among those who perised on concenration camps like Auschwitz. 
 
 
+## No dataset is complete
 
-```{r}
+In the article, Bouie touches on another important subject. He says that "no data set, no matter how precise, is complete". He further comments that looking at the slave trade, in terms of vessels and voyages, on a spreadsheet or datasheet, can often carry a heavy and dehumanizing cost. I agree with as the these spreadsheet may be pertinent to us because we can use it on our research but it is also true that these were people human beings with real emotions and feelings. If we don't account for this during our data analysis or modelling, we run the risk of ethical misconduct. 
 
-```
+## why do we have data
 
+Bouie points the brutal truth that the only reason we have data available today on slave trade is not because of any righteous reasons but because slave trader needed accounts details for legal and commercial reasons. He points out that those enslaved were "objects" for trader who saw them nothing more than commodity that can be bought ans sold. Unfortunately, the same is applicable to the data we have found on Auschwitz. In fact, the data was compied by German forces who kept records of those who died, in ledger, which they called Sterbebücher. The word translates to death book in English. I think this notion again points out how is important to realize and keep in mind how we get these data and the true human cost behind it. 
 
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-
-
-df_1 |>
-  ggplot(aes(x = ethnicity, y = total, fill = ethnicity)) +
-  geom_bar(stat = "identity", position = "dodge") +
-  labs(title = "Total Number of Last Names by Ethnicity",
-       x = "Ethnicity",
-       y = "Total Number of Last Names",
-       fill = "Ethnicity") +
-  theme_minimal() + 
-  scale_fill_brewer(palette = "Set1")
-
-```
-
-
-Discussion
 
 
 
