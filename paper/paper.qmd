@@ -20,7 +20,7 @@ library(readxl)
 library(ggplot2)
 
 
-df <- read_csv(here::here("data/raw_data/df.csv"))
+df <- read_csv(here::here("holocaust_app/df.csv"))
 
 
 ```
