@@ -82,3 +82,82 @@ server <- function(input, output) {
 # Run the application
 shinyApp(ui = ui, server = server)
 This Shiny app allows users to select the ethnicities they are interested in viewing data for. The app then dynamically updates both a bar plot and a table to display the number of Holocaust victims for the selected ethnicities. Make sure to replace df with the name of your actual dataframe containing the ethnicity data.
+
+
+
+# Discussion
+
+## what we did
+
+In the article titled " We Still Can’t See American Slavery for What It Was" by @Bouie_2022, the author touches on some topic that is relevant to the work we have done this project. In this project, we use holocaust data, specifically Auschwitz to evaluate all those who perished during World war II. We created a app using `shiny` [@shiny] library, which lets us evaluate all those who died at Auschwitz using their ethnic background. The data we got was from @data. 
+
+## Data info
+
+The data contains preserved Death Books or Sterbebücher of Auschwitz concentration camp in Poland between July 29, 1941 to December 31, 1943. The data includes information of first name, and last name of the victims, along with their date of birth, date of death, birthplace, residence and religion. For the purposes of our app, we assume birthplace is valid indicator of a victims ethnicity as the data lacks information on ethnicity data. 
+
+## Discussion based on Bouie
+
+The author starts out by pointing out the 12.5 million people who were captured during slave trade, only 10.7 million people actually reached the so-called "new world". In contrast to what we did, the data we found consists of 65,280 people between July 29, 1941 and December 31, 1943 at just one location, Auschwitz. 
+
+The author then talks about SlaveVoyages database which is a repository, detailing information on individual ships, individual voyages and even individual people. This is a ground-breaking tool for researcher that it offers opportunity for nuanced research and answer question that were previously unknown. Similarly, database like United States Holocaust Memorial Museum lets us analyze and ask research question pertaining to World war II. Both instances highlight the importance of data availability and possibilities that are out there when we have data.
+
+## Identifying individuals
+
+Bouie proposes the question: How exactly do we relate to data that allows someone — anyone — to identify a specific enslaved person? In this project, we ask a question on a similar breadth. However, unlike Bouie, we start by asking ethnicity or birth place are we interested in. From there, the `shiny` app allows us look at individuals with first and last name based on the ethnicity. I believe this is an important thing to be able to do as people who have lost their family during holocaust, can now trace back to see if their ancestors were among those who perised on concenration camps like Auschwitz. 
+
+
+## No dataset is complete
+
+In the article, Bouie touches on another important subject. He says that "no data set, no matter how precise, is complete". He further comments that looking at the slave trade, in terms of vessels and voyages, on a spreadsheet or datasheet, can often carry a heavy and dehumanizing cost. I agree with as the these spreadsheet may be pertinent to us because we can use it on our research but it is also true that these were people human beings with real emotions and feelings. If we don't account for this during our data analysis or modelling, we run the risk of ethical misconduct. 
+
+## why do we have data
+
+Bouie points the brutal truth that the only reason we have data available today on slave trade is not because of any righteous reasons but because slave trader needed accounts details for legal and commercial reasons. He points out that those enslaved were "objects" for trader who saw them nothing more than commodity that can be bought ans sold. Unfortunately, the same is applicable to the data we have found on Auschwitz. In fact, the data was compied by German forces who kept records of those who died, in ledger, which they called Sterbebücher. The word translates to death book in English. I think this notion again points out how is important to realize and keep in mind how we get these data and the true human cost behind it. 
+
+
+correct all the grammer mistakes and change lines where it does not makes sense, to make it make sense
+ChatGPT
+Discussion
+What We Did
+In the article titled "We Still Can’t See American Slavery for What It Was" by @Bouie_2022, the author touches on some topics that are relevant to the work we have done in this project. In this project, we utilized Holocaust data, specifically from Auschwitz, to evaluate all those who perished during World War II. We created an app using the shiny library [@shiny], which allows us to analyze all those who died at Auschwitz based on their ethnic background. The data we used was sourced from @data.
+
+Data Info
+The data comprises preserved Death Books or Sterbebücher of Auschwitz concentration camp in Poland, spanning from July 29, 1941, to December 31, 1943. It includes information such as the first name and last name of the victims, along with their date of birth, date of death, birthplace, residence, and religion. For the purposes of our app, we assume that birthplace is a valid indicator of a victim's ethnicity, as the data lacks specific information on ethnicity.
+
+Discussion Based on Bouie's Article
+The author begins by noting that out of 12.5 million people captured during the slave trade, only 10.7 million people actually reached the so-called "new world." In contrast to our dataset, which consists of 65,280 individuals recorded at just one location, Auschwitz, between July 29, 1941, and December 31, 1943.
+
+The author also discusses the SlaveVoyages database, which is a repository detailing information on individual ships, voyages, and individuals involved in the slave trade. This database, like the United States Holocaust Memorial Museum, provides invaluable opportunities for nuanced research and answering previously unknown questions. These instances underscore the importance of data availability and the possibilities it opens up for research.
+
+Identifying Individuals
+Bouie poses the question: How exactly do we relate to data that allows someone — anyone — to identify a specific enslaved person? In our project, we address a similar question by focusing on ethnicity or birthplace. The shiny app we developed enables users to identify individuals based on their first and last names and ethnicity. This functionality is crucial as it allows individuals who have lost family members during the Holocaust to trace their ancestors and determine if they perished in concentration camps like Auschwitz.
+
+No Dataset is Complete
+The article highlights the important point that no dataset, no matter how precise, is complete. Looking at the slave trade in terms of vessels and voyages on a spreadsheet or datasheet can often come with a heavy and dehumanizing cost. This observation is relevant to our research, as while the spreadsheet data is pertinent for analysis, it is crucial to remember that behind the data points are real human beings with emotions and feelings. Failing to account for this during data analysis or modeling can lead to ethical misconduct.
+
+Why Do We Have Data?
+Bouie points out the brutal truth that the only reason we have data available today on the slave trade is not due to any righteous reasons, but because slave traders needed account details for legal and commercial purposes. He emphasizes that those enslaved were seen as "objects" by traders, nothing more than commodities that could be bought and sold. Unfortunately, the same applies to the data we have found on Auschwitz. In fact, the data was compiled by German forces who kept records of those who died in ledgers, which they referred to as Sterbebücher, meaning death books in English. This notion underscores the importance of recognizing and acknowledging the true human cost behind the data we utilize.
+
+User
+add some more jargon to make to increase word count
+ChatGPT
+Discussion
+What We Accomplished
+In the illuminating article titled "We Still Can’t See American Slavery for What It Was" by @Bouie_2022, the author delves into topics that resonate deeply with the endeavors we pursued in this project. Our venture involved the meticulous utilization of Holocaust data, specifically sourced from Auschwitz, to meticulously evaluate all those who tragically perished during the tumultuous era of World War II. Leveraging the powerful shiny library [@shiny], we meticulously crafted an interactive app, empowering us to delve into the nuanced analysis of those who met their fates at Auschwitz, categorized by their respective ethnic backgrounds. The dataset procured for our app was meticulously curated from the archives maintained by @data.
+
+Data Insights
+The dataset comprises meticulously preserved Death Books or Sterbebücher originating from the Auschwitz concentration camp in Poland, meticulously chronicling the period from July 29, 1941, to December 31, 1943. It provides a comprehensive array of information, including the first names and last names of the unfortunate victims, along with meticulous records of their dates of birth, dates of death, birthplaces, residences, and religious affiliations. Given the paucity of explicit ethnicity data within the dataset, we pragmatically infer ethnic backgrounds based on birthplace, making it a pivotal component for our analytical framework.
+
+Thought-Provoking Insights
+The author poignantly observes that out of the 12.5 million individuals captured during the ignominious slave trade era, only 10.7 million individuals ultimately reached the so-called "new world." This striking comparison underscores the scale of the atrocities witnessed, juxtaposed against the relatively modest dataset of 65,280 individuals meticulously documented at Auschwitz during the stipulated timeframe.
+
+Furthermore, the author astutely draws attention to the invaluable resource that is the SlaveVoyages database, meticulously cataloging intricate details of individual ships, voyages, and even the individuals ensnared in the brutal machinery of the slave trade. This repository, akin to the United States Holocaust Memorial Museum database, serves as an invaluable trove for scholarly exploration, unlocking unprecedented avenues for nuanced research and shedding light on previously obscured historical narratives.
+
+Individual Identification Framework
+In pondering the ethical conundrum posed by the ability to identify specific enslaved individuals, we reflect upon a parallel inquiry in our project. Our app's functionality allows users to delve into the intricate tapestry of ethnicity or birthplace, facilitating the identification of individuals based on their first and last names alongside their ethnic affiliations. This feature carries profound significance, offering solace to individuals seeking to trace their familial roots amidst the harrowing annals of the Holocaust.
+
+Acknowledging Data Limitations
+The poignant observation that no dataset, regardless of its precision, can be deemed exhaustive rings true across historical datasets. While the empirical rigor of spreadsheet-based analysis aids scholarly endeavors, it is imperative to approach such data with sensitivity and empathy. Each data point represents not merely an abstract statistic but a poignant testament to the lived experiences of real human beings, imbued with emotions, aspirations, and familial bonds. Failure to acknowledge this reality risks perpetuating ethical transgressions within our analytical frameworks.
+
+Interrogating Data Origins
+Bouie incisively highlights the disquieting reality that the availability of data on the slave trade owes its existence not to altruistic motives but rather to the pragmatic imperatives of commercial and legal documentation. This stark observation is equally applicable to the dataset culled from Auschwitz, painstakingly compiled by German forces and preserved within the confines of meticulously maintained ledgers, ominously titled Sterbebücher, or death books. It behooves us to confront the inherent moral quandaries surrounding the utilization of such data, mindful of the profound human toll exacted by the historical events they encapsulate.
